@@ -1,0 +1,16 @@
+Create Enclave...
+
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.2850, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.2900, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.2950, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3000, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3050, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3100, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3150, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3200, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3250, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3300, fault_width 0.000050, delay 0.000000
+[fault] idx=1389: 8E EA 5B 68 1C 57 2C 4C B2 31 A5 99 5C 0D 3A 28 7E C5 C1 0B 3A A3 3A 1B 99 D8 2D 07 8C 08 4E 91 F5 03 C8 AC 33 36 F3 73 73 B1 FB F1 61 C8 45 81 5D B4 79 F4 C8 EA 06 BD 05 79 D3 9E AD 6F 6A D5 
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3350, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002750, fault_volt 0.3400, fault_width 0.000050, delay 0.000000
+[fault] idx=383: 3B 80 A5 B7 0D 2C D9 25 6A C4 71 A1 76 CF C0 3A 1E 62 C9 4E 6D 13 6C 7F E7 1F EB A2 F4 10 02 C4 E6 C7 B7 21 2B F8 82 46 D5 F0 B2 0A 40 B4 18 7F CD D9 EB 7E F3 47 04 85 26 EB D4 FF 5B D9 5E 93 

@@ -1,0 +1,20 @@
+init RSA...
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1030, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1060, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1090, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1120, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1150, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1180, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1210, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1240, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1270, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1300, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1330, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1360, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1390, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1420, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1450, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1480, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1510, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1540, fault_width 0.000070, delay 0.000000
+pre_volt 0.0800, pre_width 0.000040, fault_volt 0.1570, fault_width 0.000070, delay 0.000000

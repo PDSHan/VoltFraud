@@ -1,0 +1,75 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +54.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +41.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 100
+retries 5
+frequency 2.9GHz
+pre_voltage 0.067000
+pre_delay  35
+glitch_voltage 0.000000
+rst_delay -30
+target_func_id 0
+max_iterations 1000000000
+thread 1
+Simple Mode
+Step Count: 200
+------Start glitching------
+under voltage is 0.067000V
+under voltage is 0.068000V
+under voltage is 0.069000V
+under voltage is 0.070000V
+under voltage is 0.071000V
+under voltage is 0.072000V
+under voltage is 0.073000V
+under voltage is 0.074000V
+under voltage is 0.075000V
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +55.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +41.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +41.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 901670810
+ > Operand 1   	 : 3385c9cf6841cd1e
+ > Operand 2   	 : 1e277d835d4886dc
+ > Correct     	 : a836d52fa059f9c8
+ > Test result 0      	 : 2836d52fa059f9c8
+ > xor result  0      	 : 8000000000000000
+
+
+ > Test result 1      	 : a836d52fa059f9c8
+ > xor result  1      	 : 0000000000000000
+
+
+ > Test result 2      	 : a836d52fa059f9c8
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : a836d52fa059f9c8
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : a836d52fa059f9c8
+ > xor result  4      	 : 0000000000000000
+
+
+under voltage is 0.076000V
+

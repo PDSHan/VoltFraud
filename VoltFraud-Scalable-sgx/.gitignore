@@ -1,0 +1,7 @@
+*.o
+*.so
+*.unsigned.so
+*.signed.so
+private_key.pem
+public_key.pem
+

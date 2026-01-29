@@ -1,0 +1,54 @@
+Create SM4 Enclave...
+
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0840, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0870, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0900, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0930, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0960, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0990, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1020, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1050, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1080, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1110, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1140, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1170, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1200, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1230, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1260, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1290, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1320, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1350, fault_width 0.000065, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1380, fault_width 0.000065, delay 0.000000
+[Enclave]: find fault at iterations 34
+[Enclave]: difference found at block 4904
+0xf5 0xb0 0xc4 0x48 0xc2 0x35 0x4e 0x6d 0x49 0x9a 0xb1 0x28 0x26 0xb8 0x9b 0xca 
+
+[Enclave]: difference found at block 4909
+0xf5 0xb1 0xc4 0x4c 0xc2 0x35 0x4e 0x6d 0x49 0x9a 0xb1 0x28 0x26 0xb8 0x9b 0xca 
+
+[Enclave]: difference found at block 4961
+0x1c 0xc5 0xd9 0xef 0xd5 0x22 0x9f 0xab 0x49 0x9a 0x31 0x28 0x26 0xb8 0x9b 0xca 
+
+[Enclave]: difference found at block 4976
+0xd3 0xd6 0x04 0xff 0x3e 0x43 0xe8 0xb7 0x79 0x5d 0x48 0xa3 0x2d 0xb6 0x81 0xc5 
+
+[Enclave]: difference found at block 4978
+0xc9 0xc2 0x1a 0xb4 0x35 0xc7 0x5f 0x0b 0x88 0x84 0x8f 0xba 0x2b 0x62 0xa8 0xb3 
+
+[Enclave]: difference found at block 5000
+0x64 0x36 0xd2 0x5e 0x42 0x35 0x4e 0x6d 0x49 0x9a 0xb1 0x28 0x26 0xb8 0x9b 0xca 
+
+[Enclave]: difference found at block 5001
+0x86 0xc2 0x68 0x97 0xc2 0x35 0xce 0x6d 0x49 0x9a 0xb1 0x28 0x26 0xb8 0x9b 0xca 
+
+[Enclave]: difference found at block 5005
+0xe4 0x75 0x51 0x56 0xd7 0x1a 0xcb 0xfc 0x5a 0x0a 0x05 0x49 0x9f 0xd3 0xc0 0x11 
+
+[Enclave]: difference found at block 5029
+0xca 0x3a 0x2b 0xd8 0xc7 0x1f 0x56 0xcc 0xe8 0x94 0x83 0x80 0x1e 0x52 0x90 0x7c 
+
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1410, fault_width 0.000065, delay 0.000000
+[Enclave]: find fault at iterations 148
+[Enclave]: difference found at block 4166
+0x99 0x06 0x35 0x7f 0x08 0x45 0xf3 0x7e 0xfe 0x03 0xcd 0x43 0x3c 0x1f 0x9a 0x0d 
+

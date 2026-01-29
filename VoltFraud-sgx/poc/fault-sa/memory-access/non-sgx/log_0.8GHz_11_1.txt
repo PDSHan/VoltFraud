@@ -1,0 +1,16 @@
+Array region pa: 0x101d80000, belong to hugepage: 0x101c00000, index: 11
+memory read test
+retries is 10
+index is 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.5750, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.5800, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.5850, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.5900, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.5950, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6000, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6050, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6100, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6150, fault_width 0.000050, index 11
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6200, fault_width 0.000050, index 11
+[data2 fault at 9 retries]   idx=3839: AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC BC EC BC EC BC EC BC EC BC EC BC EC BC EC BC EC 
+pre_volt 0.3500, pre_width 0.000015, fault_volt 0.6250, fault_width 0.000050, index 11

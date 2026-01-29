@@ -1,0 +1,120 @@
+Create SM4 Enclave...
+
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.0880, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.0910, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.0940, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.0970, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1000, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1030, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1060, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1090, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1120, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1150, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1180, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1210, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1240, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1270, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1300, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1330, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1360, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1390, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1420, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1450, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1480, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1510, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1540, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1570, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1600, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1630, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1660, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1690, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1720, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1750, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1780, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1810, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1840, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1870, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1900, fault_width 0.000044, delay 0.000000
+[Enclave]: find fault at iterations 140
+[Enclave]: difference found at block 1917
+0xd6 0xc5 0xe9 0x5f 0x42 0xb7 0x5b 0x38 0x00 0xa8 0x21 0x08 0x09 0xbd 0x4a 0xc9 
+
+[Enclave]: difference found at block 1957
+0x5a 0x39 0xd5 0x0f 0xde 0xd3 0x2b 0xa1 0x6d 0x01 0xcb 0xf1 0x95 0xe4 0x8c 0x5a 
+
+[Enclave]: difference found at block 1973
+0x7c 0xd7 0xd9 0x84 0x73 0x10 0x71 0x94 0xf6 0x5f 0x58 0xcb 0x72 0x8a 0x97 0x3e 
+
+[Enclave]: difference found at block 2005
+0x55 0x2e 0xb7 0x38 0xee 0x2d 0x2d 0x66 0x92 0x58 0xc9 0x4b 0xb0 0x41 0x76 0xdf 
+
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1930, fault_width 0.000044, delay 0.000000
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1960, fault_width 0.000044, delay 0.000000
+[Enclave]: find fault at iterations 279
+[Enclave]: difference found at block 2405
+0xc0 0xd8 0x86 0xc9 0x8e 0xa1 0x6a 0xa0 0x49 0x75 0xd0 0x49 0x64 0xe8 0x9b 0x88 
+
+[Enclave]: find fault at iterations 806
+[Enclave]: difference found at block 2157
+0xc4 0x26 0xd4 0xc8 0x2a 0x9d 0x9c 0x67 0x6d 0x0e 0xf4 0x6c 0x0d 0xc9 0x13 0xcc 
+
+[Enclave]: find fault at iterations 858
+[Enclave]: difference found at block 2582
+0x83 0xdf 0xf6 0xbb 0x14 0x1a 0xa8 0x1f 0x70 0xfb 0x1d 0xda 0x5f 0x55 0x9a 0xfd 
+
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.1990, fault_width 0.000044, delay 0.000000
+[Enclave]: find fault at iterations 313
+[Enclave]: difference found at block 2750
+0x71 0x14 0xe5 0xcc 0xc2 0x35 0x4e 0x6d 0x49 0x9a 0xb1 0x28 0x26 0xb8 0x9b 0xca 
+
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.2020, fault_width 0.000044, delay 0.000000
+[Enclave]: find fault at iterations 491
+[Enclave]: difference found at block 2676
+0xac 0x6a 0xcc 0x70 0xc4 0xb9 0xa8 0x58 0xff 0xbe 0xe5 0x7f 0x24 0xb8 0x23 0xee 
+
+[Enclave]: difference found at block 2677
+0x8c 0x8d 0xdb 0x04 0x7f 0xd8 0x69 0x77 0xcb 0x89 0xba 0x77 0x70 0x64 0xba 0xf6 
+
+[Enclave]: difference found at block 2679
+0x8c 0x8d 0xdb 0x04 0x7f 0xd8 0x69 0x77 0xcb 0x89 0xba 0x77 0x70 0x64 0xba 0xf6 
+
+[Enclave]: find fault at iterations 778
+[Enclave]: difference found at block 2797
+0xae 0x48 0x8f 0xe5 0xbe 0xd8 0xf0 0x83 0x5e 0xbc 0xcc 0xe6 0xab 0x6b 0x9d 0xc4 
+
+pre_volt 0.0750, pre_width 0.000025, fault_volt 0.2050, fault_width 0.000044, delay 0.000000
+[Enclave]: find fault at iterations 108
+[Enclave]: difference found at block 2005
+0x55 0x2e 0xb7 0x38 0xee 0x2d 0x2d 0x66 0x92 0x58 0xc9 0x4b 0xb0 0x41 0x76 0xdf 
+
+[Enclave]: difference found at block 2006
+0x7e 0x38 0x80 0xfe 0xec 0xf2 0xff 0x0f 0xa6 0x19 0xe4 0xef 0x35 0x0d 0x4f 0x04 
+
+[Enclave]: find fault at iterations 545
+[Enclave]: difference found at block 2268
+0x57 0x5d 0x62 0x0b 0xfe 0x9f 0x09 0xbd 0x1b 0xf2 0xcf 0x24 0xdf 0x30 0xad 0xbc 
+
+[Enclave]: difference found at block 2269
+0x40 0x04 0x37 0x9a 0x03 0x72 0x7f 0x16 0xfc 0x97 0x05 0x4c 0x7e 0xb4 0xee 0xbd 
+
+[Enclave]: difference found at block 2270
+0x04 0x8c 0xf0 0xe2 0x2f 0x59 0x15 0x66 0xb7 0x86 0x89 0xf3 0x57 0xa1 0xd1 0xd8 
+
+[Enclave]: difference found at block 2271
+0x8c 0x8d 0xdb 0x04 0x7f 0xd8 0x69 0x77 0xcb 0x89 0xba 0x77 0x70 0x64 0xba 0xf6 
+
+[Enclave]: find fault at iterations 568
+[Enclave]: difference found at block 2174
+0x83 0xdf 0xf6 0xbb 0x14 0x1a 0xa8 0x1f 0x70 0xfb 0x1d 0xda 0x5f 0x55 0x9a 0xfd 
+
+[Enclave]: find fault at iterations 770
+[Enclave]: difference found at block 2389
+0x05 0xc3 0xa0 0xa2 0x6b 0x0e 0x36 0x4d 0x86 0x30 0xdf 0x04 0xae 0x89 0x6f 0xbb 
+
+[Enclave]: difference found at block 2414
+0xe1 0x90 0x48 0x02 0x6b 0x70 0xa4 0x9e 0x3f 0xd1 0x48 0x33 0x24 0xd2 0xc1 0xd3 
+
+[Enclave]: find fault at iterations 840
+[Enclave]: difference found at block 2221
+0x11 0x08 0x7c 0x7f 0xd3 0x5d 0x0b 0x36 0xd1 0xa5 0x1a 0x08 0xd1 0xcf 0x4e 0x06 
+

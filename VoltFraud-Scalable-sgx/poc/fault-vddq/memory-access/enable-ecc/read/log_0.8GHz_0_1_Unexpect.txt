@@ -1,0 +1,182 @@
+Array region pa: 0x1b0c00000, belong to hugepage: 0x1b0c00000, index: 0
+memory read test
+retries is 10
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3050, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3100, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3150, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3200, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3250, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3300, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3350, fault_width 0.000050, index 0
+4,1647,5425478453,-;mce_notify_irq: 16 callbacks suppressed
+6,1648,5425478463,-;mce: [Hardware Error]: Machine check events logged
+4,1649,5425478969,-;ghes_print_estatus: 5 callbacks suppressed
+4,1650,5425478974,-;{7}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 0
+4,1651,5425478980,-;{7}[Hardware Error]: It has been corrected by h/w and requires no further action
+4,1652,5425478984,-;{7}[Hardware Error]: event severity: corrected
+4,1653,5425478988,-;{7}[Hardware Error]:  Error 0, type: corrected
+4,1654,5425478992,-;{7}[Hardware Error]:   section_type: memory error
+4,1655,5425478996,-;{7}[Hardware Error]:    error_status: Storage error in DRAM memory (0x0000000000000400)
+4,1656,5425479001,-;{7}[Hardware Error]:   physical_address: 0x00000001b154ca80
+4,1657,5425479006,-;{7}[Hardware Error]:   node:0 
+4,1658,5425479009,-;{7}[Hardware Error]:   error_type: 2, single-bit ECC
+3,1659,5425479039,-;RAS: Soft-offlining pfn: 0x1b154c
+6,1660,5425479049,-;mce: [Hardware Error]: Machine check events logged
+7,1661,5425479997,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1662,5425480002,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1663,5425480009,-;EDAC skx MC0: TSC 0x0 
+7,1664,5425480012,-;EDAC skx MC0: ADDR 0x1b154ca80 
+7,1665,5425480016,-;EDAC skx MC0: MISC 0x8c 
+7,1666,5425480019,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802500 SOCKET 0 APIC 0x0
+4,1667,5425480036,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b154c offset:0xa80 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b154ca80 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x98aa6580 ChannelId:0x1 RankAddress:0x98aa6580 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4c51 Column:0xb8 Bank:0x0 BankGroup:0x0 ChipSelect:0x0 ChipId:0x0)
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3400, fault_width 0.000050, index 0
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3450, fault_width 0.000050, index 0
+4,1668,5432217673,-;{8}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 0
+4,1669,5432217685,-;{8}[Hardware Error]: It has been corrected by h/w and requires no further action
+4,1670,5432217689,-;{8}[Hardware Error]: event severity: corrected
+4,1671,5432217693,-;{8}[Hardware Error]:  Error 0, type: corrected
+4,1672,5432217697,-;{8}[Hardware Error]:   section_type: memory error
+4,1673,5432217700,-;{8}[Hardware Error]:    error_status: Storage error in DRAM memory (0x0000000000000400)
+4,1674,5432217706,-;{8}[Hardware Error]:   physical_address: 0x00000001b0c31d40
+4,1675,5432217711,-;{8}[Hardware Error]:   node:0 
+4,1676,5432217713,-;{8}[Hardware Error]:   error_type: 2, single-bit ECC
+3,1677,5432217742,-;RAS: Soft-offlining pfn: 0x1b0c31
+7,1678,5432218668,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1679,5432218674,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1680,5432218680,-;EDAC skx MC0: TSC 0x0 
+7,1681,5432218683,-;EDAC skx MC0: ADDR 0x1b0c31d40 
+7,1682,5432218688,-;EDAC skx MC0: MISC 0x8c 
+7,1683,5432218691,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1684,5432218708,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b0c31 offset:0xd40 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b0c31d40 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x98618e40 ChannelId:0x1 RankAddress:0x98618e40 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4c36 Column:0x1c0 Bank:0x1 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+4,1685,5432326733,-;{9}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 0
+4,1686,5432326744,-;{9}[Hardware Error]: It has been corrected by h/w and requires no further action
+4,1687,5432326748,-;{9}[Hardware Error]: event severity: corrected
+4,1688,5432326752,-;{9}[Hardware Error]:  Error 0, type: corrected
+4,1689,5432326756,-;{9}[Hardware Error]:   section_type: memory error
+4,1690,5432326759,-;{9}[Hardware Error]:    error_status: Storage error in DRAM memory (0x0000000000000400)
+4,1691,5432326765,-;{9}[Hardware Error]:   physical_address: 0x00000001b4438f80
+4,1692,5432326769,-;{9}[Hardware Error]:   node:0 
+4,1693,5432326772,-;{9}[Hardware Error]:   error_type: 2, single-bit ECC
+3,1694,5432326798,-;RAS: Soft-offlining pfn: 0x1b4438
+7,1695,5432327737,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1696,5432327743,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1697,5432327749,-;EDAC skx MC0: TSC 0x0 
+7,1698,5432327752,-;EDAC skx MC0: ADDR 0x1b4438f80 
+7,1699,5432327756,-;EDAC skx MC0: MISC 0x8c 
+7,1700,5432327759,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1701,5432327775,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4438 offset:0xf80 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b4438f80 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21c780 ChannelId:0x1 RankAddress:0x9a21c780 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0xf0 Bank:0x0 BankGroup:0x2 ChipSelect:0x0 ChipId:0x0)
+3,1702,5432327932,-;Memory failure: 0x1b4438: unhandlable page.
+3,1703,5432436568,-;RAS: Soft-offlining pfn: 0x1b4437
+7,1704,5432437481,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1705,5432437487,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1706,5432437495,-;EDAC skx MC0: TSC 0x0 
+7,1707,5432437498,-;EDAC skx MC0: ADDR 0x1b4437080 
+7,1708,5432437502,-;EDAC skx MC0: MISC 0x8c 
+7,1709,5432437505,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1710,5432437520,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4437 offset:0x80 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b4437080 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21b880 ChannelId:0x1 RankAddress:0x9a21b880 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x318 Bank:0x0 BankGroup:0x2 ChipSelect:0x0 ChipId:0x0)
+3,1711,5432438094,-;Memory failure: 0x1b4437: unhandlable page.
+5,1712,5432622328,-;CPU0 BANK14 CMCI storm detected
+3,1713,5432622831,-;RAS: Soft-offlining pfn: 0x1b4437
+7,1714,5432623763,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1715,5432623769,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1716,5432623776,-;EDAC skx MC0: TSC 0x0 
+7,1717,5432623779,-;EDAC skx MC0: ADDR 0x1b4437680 
+7,1718,5432623783,-;EDAC skx MC0: MISC 0x8c 
+7,1719,5432623786,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1720,5432623800,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4437 offset:0x680 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b4437680 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21bb80 ChannelId:0x1 RankAddress:0x9a21bb80 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x378 Bank:0x0 BankGroup:0x2 ChipSelect:0x0 ChipId:0x0)
+3,1721,5432624231,-;Memory failure: 0x1b4437: unhandlable page.
+3,1722,5432704994,-;RAS: Soft-offlining pfn: 0x1b443b
+7,1723,5432705910,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1724,5432705916,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1725,5432705923,-;EDAC skx MC0: TSC 0x0 
+7,1726,5432705926,-;EDAC skx MC0: ADDR 0x1b443b3c0 
+7,1727,5432705930,-;EDAC skx MC0: MISC 0x8c 
+7,1728,5432705933,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1729,5432705947,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443b offset:0x3c0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443b3c0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21d9c0 ChannelId:0x1 RankAddress:0x9a21d9c0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x330 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1730,5432706701,-;Memory failure: 0x1b443b: unhandlable page.
+3,1731,5432779900,-;RAS: Soft-offlining pfn: 0x1b443b
+7,1732,5432780823,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1733,5432780829,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1734,5432780836,-;EDAC skx MC0: TSC 0x0 
+7,1735,5432780838,-;EDAC skx MC0: ADDR 0x1b443bf40 
+7,1736,5432780843,-;EDAC skx MC0: MISC 0x8c 
+7,1737,5432780846,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802507 SOCKET 0 APIC 0x0
+4,1738,5432780860,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443b offset:0xf40 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443bf40 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21df40 ChannelId:0x1 RankAddress:0x9a21df40 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x3e0 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1739,5432781229,-;Memory failure: 0x1b443b: unhandlable page.
+pre_volt 0.1400, pre_width 0.000015, fault_volt 0.3500, fault_width 0.000050, index 0
+3,1740,5435904709,-;RAS: Soft-offlining pfn: 0x1b4433
+7,1741,5435905647,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1742,5435905654,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1743,5435905661,-;EDAC skx MC0: TSC 0x0 
+7,1744,5435905665,-;EDAC skx MC0: ADDR 0x1b44331c0 
+7,1745,5435905669,-;EDAC skx MC0: MISC 0x8c 
+7,1746,5435905672,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802510 SOCKET 0 APIC 0x0
+4,1747,5435905688,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4433 offset:0x1c0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b44331c0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a2198c0 ChannelId:0x1 RankAddress:0x9a2198c0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x310 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1748,5435907043,-;Memory failure: 0x1b4433: unhandlable page.
+3,1749,5435982771,-;RAS: Soft-offlining pfn: 0x1b4437
+7,1750,5435983694,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1751,5435983700,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1752,5435983707,-;EDAC skx MC0: TSC 0x0 
+7,1753,5435983710,-;EDAC skx MC0: ADDR 0x1b44372c0 
+7,1754,5435983714,-;EDAC skx MC0: MISC 0x8c 
+7,1755,5435983717,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1756,5435983733,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4437 offset:0x2c0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b44372c0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21b9c0 ChannelId:0x1 RankAddress:0x9a21b9c0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x338 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1757,5435984000,-;Memory failure: 0x1b4437: unhandlable page.
+3,1758,5436086522,-;RAS: Soft-offlining pfn: 0x1b443a
+7,1759,5436087443,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1760,5436087449,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1761,5436087456,-;EDAC skx MC0: TSC 0x0 
+7,1762,5436087459,-;EDAC skx MC0: ADDR 0x1b443a3c0 
+7,1763,5436087463,-;EDAC skx MC0: MISC 0x8c 
+7,1764,5436087466,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1765,5436087480,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443a offset:0x3c0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443a3c0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21d1c0 ChannelId:0x1 RankAddress:0x9a21d1c0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x230 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1766,5436087945,-;Memory failure: 0x1b443a: unhandlable page.
+3,1767,5436161739,-;RAS: Soft-offlining pfn: 0x1b4436
+7,1768,5436162656,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1769,5436162662,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1770,5436162669,-;EDAC skx MC0: TSC 0x0 
+7,1771,5436162672,-;EDAC skx MC0: ADDR 0x1b44366c0 
+7,1772,5436162676,-;EDAC skx MC0: MISC 0x8c 
+7,1773,5436162679,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1774,5436162693,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4436 offset:0x6c0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b44366c0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21b3c0 ChannelId:0x1 RankAddress:0x9a21b3c0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x278 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1775,5436163272,-;Memory failure: 0x1b4436: unhandlable page.
+3,1776,5436236694,-;RAS: Soft-offlining pfn: 0x1b443a
+7,1777,5436237646,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1778,5436237653,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1779,5436237660,-;EDAC skx MC0: TSC 0x0 
+7,1780,5436237663,-;EDAC skx MC0: ADDR 0x1b443a140 
+7,1781,5436237667,-;EDAC skx MC0: MISC 0x8c 
+7,1782,5436237670,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1783,5436237684,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443a offset:0x140 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443a140 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21d040 ChannelId:0x1 RankAddress:0x9a21d040 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x200 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1784,5436238245,-;Memory failure: 0x1b443a: unhandlable page.
+3,1785,5436339500,-;RAS: Soft-offlining pfn: 0x1b443b
+7,1786,5436340415,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1787,5436340421,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1788,5436340428,-;EDAC skx MC0: TSC 0x0 
+7,1789,5436340431,-;EDAC skx MC0: ADDR 0x1b443b900 
+7,1790,5436340435,-;EDAC skx MC0: MISC 0x8c 
+7,1791,5436340438,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1792,5436340452,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443b offset:0x900 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443b900 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21dc00 ChannelId:0x1 RankAddress:0x9a21dc00 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x380 Bank:0x0 BankGroup:0x2 ChipSelect:0x0 ChipId:0x0)
+3,1793,5436340688,-;Memory failure: 0x1b443b: unhandlable page.
+3,1794,5436414705,-;RAS: Soft-offlining pfn: 0x1b4437
+7,1795,5436415624,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1796,5436415630,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1797,5436415637,-;EDAC skx MC0: TSC 0x0 
+7,1798,5436415640,-;EDAC skx MC0: ADDR 0x1b4437cc0 
+7,1799,5436415644,-;EDAC skx MC0: MISC 0x8c 
+7,1800,5436415647,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1801,5436415662,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b4437 offset:0xcc0 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b4437cc0 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21bec0 ChannelId:0x1 RankAddress:0x9a21bec0 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d16 Column:0x3d8 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1802,5436416223,-;Memory failure: 0x1b4437: unhandlable page.
+3,1803,5436490608,-;RAS: Soft-offlining pfn: 0x1b443e
+7,1804,5436491522,-;EDAC skx MC0: HANDLING MCE MEMORY ERROR
+7,1805,5436491528,-;EDAC skx MC0: CPU 0: Machine Check Event: 0x0 Bank 255: 0x9c0000000000009f
+7,1806,5436491536,-;EDAC skx MC0: TSC 0x0 
+7,1807,5436491539,-;EDAC skx MC0: ADDR 0x1b443e240 
+7,1808,5436491543,-;EDAC skx MC0: MISC 0x8c 
+7,1809,5436491546,-;EDAC skx MC0: PROCESSOR 0:0x606a6 TIME 1767802511 SOCKET 0 APIC 0x0
+4,1810,5436491560,-;EDAC MC0: 0 CE memory read error on CPU_SrcID#0_MC#0_Chan#1_DIMM#0 (channel:1 slot:0 page:0x1b443e offset:0x240 grain:32 syndrome:0x0 -  err_code:0x0000:0x009f  SystemAddress:0x1b443e240 ProcessorSocketId:0x0 MemoryControllerId:0x0 ChannelAddress:0x9a21f140 ChannelId:0x1 RankAddress:0x9a21f140 PhysicalRankId:0x0 DimmSlotId:0x0 Row:0x4d17 Column:0x228 Bank:0x0 BankGroup:0x3 ChipSelect:0x0 ChipId:0x0)
+3,1811,5436492362,-;Memory failure: 0x1b443e: unhandlable page.
+
+
+
+End momery test

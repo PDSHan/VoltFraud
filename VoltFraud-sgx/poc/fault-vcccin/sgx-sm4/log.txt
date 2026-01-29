@@ -1,0 +1,14 @@
+Create SM4 Enclave...
+
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0030, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0060, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0090, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0120, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0150, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0180, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0210, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0240, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0270, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0300, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0330, fault_width 0.000000, delay 0.000000
+pre_volt 0.0000, pre_width 0.000000, fault_volt 0.0360, fault_width 0.000000, delay 0.000000

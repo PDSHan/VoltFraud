@@ -1,0 +1,47 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +54.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +43.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 0.000100
+frequency 3.5GHz
+retries 5
+pre_volt 0.0320
+pre_width  0.000100
+fault_volt 0.0520
+fault_width 0.000500
+target_func_id 0
+max_iterations 100000000
+thread 1
+Step Count: 200
+------Start glitching------
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0520, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0530, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0540, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0550, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0560, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0570, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0580, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0590, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0600, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0610, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0620, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0630, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0640, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0650, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0660, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0670, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0680, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0690, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0700, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0710, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0720, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0320, pre_width 0.000100, fault_volt 0.0730, fault_width 0.000500, delay 0.000100, 

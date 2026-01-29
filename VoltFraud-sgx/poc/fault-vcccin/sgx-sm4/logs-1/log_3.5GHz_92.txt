@@ -1,0 +1,26 @@
+Create SM4 Enclave...
+
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0630, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0660, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0690, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0720, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0750, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0780, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0810, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0840, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0870, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0900, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0930, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0960, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.0990, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1020, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1050, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1080, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1110, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1140, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1170, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1200, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1230, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1260, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1290, fault_width 0.000059, delay 0.000000
+pre_volt 0.0500, pre_width 0.000025, fault_volt 0.1320, fault_width 0.000059, delay 0.000000

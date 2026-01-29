@@ -1,0 +1,15 @@
+enclave {
+	
+	trusted {
+		include "tlibc/string.h"
+		include "tlibc/stdio.h"
+
+		public uint8_t rsa_dec_ecall([out] uint8_t result[256]);
+		public uint8_t rsa_init_ecall();
+		public uint8_t rsa_clean_ecall();
+	};
+	
+	untrusted {
+	 	void ocall_print_string([in, string] const char *str);
+	};
+};

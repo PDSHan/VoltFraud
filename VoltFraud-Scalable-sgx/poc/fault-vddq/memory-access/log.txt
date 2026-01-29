@@ -1,0 +1,43 @@
+Array region pa: 0x114800000, belong to hugepage: 0x114800000, index: 0
+memory read test
+retries is 10
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2550, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2600, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2650, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2700, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2750, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2800, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2850, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2900, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2950, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3000, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3050, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3100, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3150, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3200, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3250, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3300, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3350, fault_width 0.000050, index 0
+[data2 fault at 4 retries]   idx=2595: 74 D8 04 63 CF 07 A2 6B 9C 6B F2 9B A1 4E CA F8 CE 4F 62 F7 A9 AD 08 18 8B AF 45 F1 DC 5F 86 C6 EB 1F 40 50 1C 70 9D 49 36 25 D6 ED 54 79 B9 94 A6 43 6B 19 90 FB F6 8B 83 03 B5 84 44 FA AD 33 
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3400, fault_width 0.000050, index 0
+memory read test
+retries is 10
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2550, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2600, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2650, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2700, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2750, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2800, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2850, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2900, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2950, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3000, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3050, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3100, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3150, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3200, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3250, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3300, fault_width 0.000050, index 0
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3350, fault_width 0.000050, index 0
+[data2 fault at 2 retries]   idx=2541: 4D 87 13 9C 00 01 2B A8 BB 78 5E A1 E5 F8 F0 4D A0 EF E8 80 2A 23 93 9C 11 10 84 F4 5D 29 68 C4 6B 28 37 25 69 B9 CA 52 31 FE 0B 5F 4F E8 1A 8F 73 E3 65 6B E2 F8 34 A3 C4 A5 89 E3 22 E5 3A 83 
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3400, fault_width 0.000050, index 0

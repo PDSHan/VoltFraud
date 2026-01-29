@@ -1,0 +1,57 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +44.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +32.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 100
+retries 1
+frequency 3.3GHz
+pre_voltage 0.830000
+pre_delay  35
+glitch_voltage 0.000000
+rst_delay -30
+target_func_id 0
+max_iterations 1000000000
+thread 1
+Simple Mode
+Step Count: 200
+------Start glitching------
+under voltage is 0.020000V
+under voltage is 0.021000V
+under voltage is 0.022000V
+under voltage is 0.023000V
+under voltage is 0.024000V
+under voltage is 0.025000V
+under voltage is 0.026000V
+under voltage is 0.027000V
+under voltage is 0.028000V
+under voltage is 0.029000V
+under voltage is 0.030000V
+under voltage is 0.031000V
+under voltage is 0.032000V
+under voltage is 0.033000V
+under voltage is 0.034000V
+under voltage is 0.035000V
+under voltage is 0.036000V
+under voltage is 0.037000V
+under voltage is 0.038000V
+under voltage is 0.039000V
+under voltage is 0.040000V
+under voltage is 0.041000V
+under voltage is 0.042000V
+under voltage is 0.043000V
+under voltage is 0.044000V
+under voltage is 0.045000V
+under voltage is 0.046000V
+under voltage is 0.047000V
+under voltage is 0.048000V
+under voltage is 0.049000V
+under voltage is 0.050000V

@@ -1,0 +1,25 @@
+Array region pa: 0x46c800000, belong to hugepage: 0x46c800000, index: 0
+memory read test
+retries is 10
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3050, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3100, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3150, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3200, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3250, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3300, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3350, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3400, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3450, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3500, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3550, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3600, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3650, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3700, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3750, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3800, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3850, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3900, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.3950, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.4000, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.4050, fault_width 0.000050, index 0
+pre_volt 0.2100, pre_width 0.000015, fault_volt 0.4100, fault_width 0.000050, index 0

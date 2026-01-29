@@ -1,0 +1,16 @@
+Array region pa: 0x101400000, belong to hugepage: 0x101400000, index: 0
+memory read test
+retries is 10
+index is 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3050, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3100, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3150, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3200, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3250, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3300, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3350, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3400, fault_width 0.000050, index 0
+pre_volt 0.1530, pre_width 0.000015, fault_volt 0.3450, fault_width 0.000050, index 0
+[data2 fault at 1 retries]   idx=4286: D4 AC AC AC AC AC AC AC B4 AC AC AC AC AC AC AC F4 AC AC AC AC AC AC AC D4 AC AC AC AC AC AC AC 84 AC AC AC AC AC AC AC DC AC AC AC AC AC AC AC A4 AC AC AC AC AC AC AC 84 AC AC AC AC AC AC AC 
+[data2 fault at 1 retries]   idx=4290: AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC BC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC 
+[data2 fault at 1 retries]   idx=4336: AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC A4 AC AC AC AC AC AC AC AC AC AC AC AC AC AC AC 

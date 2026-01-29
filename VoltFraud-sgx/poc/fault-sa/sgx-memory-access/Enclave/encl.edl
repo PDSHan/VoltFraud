@@ -1,0 +1,12 @@
+
+enclave {
+	trusted {
+		include "tlibc/string.h"
+		include "tlibc/stdio.h"
+		public sgx_status_t memory_access_ecall();
+	};
+	
+	untrusted {
+	 	void ocall_print_string([in, string] const char *str);
+	};
+};

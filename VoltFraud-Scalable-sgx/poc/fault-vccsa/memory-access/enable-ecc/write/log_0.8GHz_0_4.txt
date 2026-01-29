@@ -1,0 +1,28 @@
+Array region pa: 0x275400000, belong to hugepage: 0x275400000, index: 0
+memory write test
+retries is 10
+
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1550, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1600, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1650, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1700, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1750, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1800, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1850, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1900, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.1950, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2000, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2050, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2100, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2150, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2200, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2250, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2300, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2350, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2400, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2450, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2500, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2550, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2600, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2650, fault_width 0.000050, index 0
+pre_volt 0.1000, pre_width 0.000015, fault_volt 0.2700, fault_width 0.000050, index 0

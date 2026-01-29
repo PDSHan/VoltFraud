@@ -1,0 +1,11 @@
+enclave {
+	trusted {
+		include "tlibc/string.h"
+		include "tlibc/stdio.h"
+		public sgx_status_t sm4_ecall([in, size=length] unsigned char *plaintext, [out, size=length] unsigned char *ciphertext, int length);
+	};
+	
+	untrusted {
+	 	void ocall_print_string([in, string] const char *str);
+	};
+};

@@ -1,0 +1,38 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +49.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +35.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +35.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +34.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +33.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 0.000100
+frequency 2.9GHz
+retries 5
+pre_volt 0.0620
+pre_width  0.000100
+fault_volt 0.0820
+fault_width 0.000500
+target_func_id 0
+max_iterations 100000000
+thread 1
+Step Count: 200
+------Start glitching------
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0820, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0830, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0840, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0850, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0860, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0870, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0880, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0890, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0900, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0910, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0920, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0930, fault_width 0.000500, delay 0.000100, 
+pre_volt 0.0620, pre_width 0.000100, fault_volt 0.0940, fault_width 0.000500, delay 0.000100, 

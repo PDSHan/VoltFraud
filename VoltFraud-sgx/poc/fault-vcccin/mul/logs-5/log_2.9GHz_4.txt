@@ -1,0 +1,267 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +53.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +36.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +37.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 100
+retries 5
+frequency 2.9GHz
+pre_voltage 0.067000
+pre_delay  35
+glitch_voltage 0.000000
+rst_delay -30
+target_func_id 0
+max_iterations 1000000000
+thread 1
+Simple Mode
+Step Count: 200
+------Start glitching------
+under voltage is 0.067000V
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +53.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 242868400
+ > Operand 1   	 : 6c95a4ad1164dd6f
+ > Operand 2   	 : 343c5d600f88bc62
+ > Correct     	 : b276a635df32487e
+ > Test result 0      	 : 3276a635df32487e
+ > xor result  0      	 : 8000000000000000
+
+
+ > Test result 1      	 : b276a635df32487e
+ > xor result  1      	 : 0000000000000000
+
+
+ > Test result 2      	 : b276a635df32487e
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : b276a635df32487e
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : b276a635df32487e
+ > xor result  4      	 : 0000000000000000
+
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +53.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 243000899
+ > Operand 1   	 : 6c95a4ad1164dd6f
+ > Operand 2   	 : 343c5d600f88bc62
+ > Correct     	 : b276a635df32487e
+ > Test result 0      	 : b276a635df32487e
+ > xor result  0      	 : 0000000000000000
+
+
+ > Test result 1      	 : 3276a635df32487e
+ > xor result  1      	 : 8000000000000000
+
+
+ > Test result 2      	 : b276a635df32487e
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : b276a635df32487e
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : b276a635df32487e
+ > xor result  4      	 : 0000000000000000
+
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +53.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 243421075
+ > Operand 1   	 : 6c95a4ad1164dd6f
+ > Operand 2   	 : 343c5d600f88bc62
+ > Correct     	 : b276a635df32487e
+ > Test result 0      	 : b276a635df32487e
+ > xor result  0      	 : 0000000000000000
+
+
+ > Test result 1      	 : 3276a635df32487e
+ > xor result  1      	 : 8000000000000000
+
+
+ > Test result 2      	 : b276a635df32487e
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : b276a635df32487e
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : b276a635df32487e
+ > xor result  4      	 : 0000000000000000
+
+
+
+under voltage is 0.068000V
+under voltage is 0.069000V
+under voltage is 0.070000V
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +54.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 527268705
+ > Operand 1   	 : 1c49f5d2603e0285
+ > Operand 2   	 : 1472aaa516ba5692
+ > Correct     	 : 62c0114dfad81dda
+ > Test result 0      	 : 62c0114dfad81dda
+ > xor result  0      	 : 0000000000000000
+
+
+ > Test result 1      	 : 22c0114dfad81dda
+ > xor result  1      	 : 4000000000000000
+
+
+ > Test result 2      	 : 62c0114dfad81dda
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : 62c0114dfad81dda
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : 62c0114dfad81dda
+ > xor result  4      	 : 0000000000000000
+
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +54.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 532271174
+ > Operand 1   	 : 1c49f5d2603e0285
+ > Operand 2   	 : 1472aaa516ba5692
+ > Correct     	 : 62c0114dfad81dda
+ > Test result 0      	 : 22c0114dfad81dda
+ > xor result  0      	 : 4000000000000000
+
+
+ > Test result 1      	 : 62c0114dfad81dda
+ > xor result  1      	 : 0000000000000000
+
+
+ > Test result 2      	 : 62c0114dfad81dda
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : 62c0114dfad81dda
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : 62c0114dfad81dda
+ > xor result  4      	 : 0000000000000000
+
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +54.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +38.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +39.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +40.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 647410090
+ > Operand 1   	 : 1c49f5d2603e0285
+ > Operand 2   	 : 1472aaa516ba5692
+ > Correct     	 : 62c0114dfad81dda
+ > Test result 0      	 : 22c0114dfad81dda
+ > xor result  0      	 : 4000000000000000
+
+
+ > Test result 1      	 : 62c0114dfad81dda
+ > xor result  1      	 : 0000000000000000
+
+
+ > Test result 2      	 : 62c0114dfad81dda
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : 62c0114dfad81dda
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : 62c0114dfad81dda
+ > xor result  4      	 : 0000000000000000
+
+
+under voltage is 0.071000V
+under voltage is 0.072000V
+under voltage is 0.073000V
+under voltage is 0.074000V
+under voltage is 0.075000V
+under voltage is 0.076000V
+

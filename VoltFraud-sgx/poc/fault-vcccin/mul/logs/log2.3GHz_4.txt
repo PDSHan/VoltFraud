@@ -1,0 +1,93 @@
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +45.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +33.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +31.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+DC power output channel is 1
+delay_start 100
+retries 1
+frequency 2.3GHz
+pre_voltage 0.830000
+pre_delay  35
+glitch_voltage 0.000000
+rst_delay -30
+target_func_id 0
+max_iterations 1000000000
+thread 1
+Simple Mode
+Step Count: 200
+------Start glitching------
+under voltage is 0.080000V
+under voltage is 0.081000V
+under voltage is 0.082000V
+under voltage is 0.083000V
+under voltage is 0.084000V
+under voltage is 0.085000V
+under voltage is 0.086000V
+under voltage is 0.087000V
+under voltage is 0.088000V
+under voltage is 0.089000V
+under voltage is 0.090000V
+under voltage is 0.091000V
+under voltage is 0.092000V
+under voltage is 0.093000V
+under voltage is 0.094000V
+under voltage is 0.095000V
+under voltage is 0.096000V
+under voltage is 0.097000V
+under voltage is 0.098000V
+under voltage is 0.099000V
+under voltage is 0.100000V
+under voltage is 0.101000V
+under voltage is 0.102000V
+under voltage is 0.103000V
+under voltage is 0.104000V
+under voltage is 0.105000V
+under voltage is 0.106000V
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +45.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 0:        +33.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 1:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 2:        +31.0°C  (high = +80.0°C, crit = +100.0°C)
+Core 3:        +30.0°C  (high = +80.0°C, crit = +100.0°C)
+
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+
+
+------   [MUL] CALCULATION ERROR DETECTED   ------
+ > Iterations  	 : 10983696
+ > Operand 1   	 : 77d7970b25ef4a31
+ > Operand 2   	 : 5a7b76cf6cba91a1
+ > Correct     	 : c5786546f81d69d1
+ > Test result 0      	 : c5785546f81d69d1
+ > xor result  0      	 : 0000300000000000
+
+
+ > Test result 1      	 : c5786546f81d69d1
+ > xor result  1      	 : 0000000000000000
+
+
+ > Test result 2      	 : c5786546f81d69d1
+ > xor result  2      	 : 0000000000000000
+
+
+ > Test result 3      	 : c5786546f81d69d1
+ > xor result  3      	 : 0000000000000000
+
+
+ > Test result 4      	 : c5786546f81d69d1
+ > xor result  4      	 : 0000000000000000
+
+
+Fault at step: 26, Repeat: 0
+under voltage is 0.107000V

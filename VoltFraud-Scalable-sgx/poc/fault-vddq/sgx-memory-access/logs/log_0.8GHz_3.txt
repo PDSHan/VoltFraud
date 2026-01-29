@@ -1,0 +1,7 @@
+Create Enclave...
+
+pre_volt 0.1200, pre_width 0.002745, fault_volt 0.2850, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002745, fault_volt 0.2900, fault_width 0.000050, delay 0.000000
+pre_volt 0.1200, pre_width 0.002745, fault_volt 0.2950, fault_width 0.000050, delay 0.000000
+[fault] idx=1422: 90 42 71 45 5A D3 83 16 30 5A 92 A4 80 CA 9C D3 64 9B AF E6 D7 EB E5 4B 2C 3E 2A 31 1D 1F BC 88 6E 10 EC 36 E5 8B BD C9 F8 4D 15 9D 17 62 A2 DA 15 E8 97 EB 89 86 5E 3B 34 FE FE 7B 54 FE 12 7C 
+pre_volt 0.1200, pre_width 0.002745, fault_volt 0.3000, fault_width 0.000050, delay 0.000000
