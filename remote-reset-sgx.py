@@ -31,9 +31,9 @@ def ssh_connect():
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(REMOTE_HOST, username=USERNAME, password=PASSWORD, timeout=5)
-        print("SSH 连接成功")
+        print("SSH connect")
     except Exception as e:
-        print(f"SSH 连接失败: {e}")
+        print(f"SSH failed: {e}")
         ssh = None
 
 def ssh_disconnect():
@@ -53,8 +53,7 @@ def is_host_alive():
     def run_cmd():
         try:
             stdin, stdout, stderr = ssh.exec_command(HEALTH_CHECK_CMD)
-            # 第二重保险：轮询 exit_status_ready 防止 read 卡死
-            deadline = time.time() + 5  # 5秒超时
+            deadline = time.time() + 5  
             output = []
             while time.time() < deadline:
                 if stdout.channel.exit_status_ready():
@@ -62,31 +61,29 @@ def is_host_alive():
                     break
                 time.sleep(0.1)
             else:
-                raise TimeoutError("stdout.read() 超时")
+                raise TimeoutError("stdout.read() timeout")
             result_container["out"] = output
         except Exception as e:
             result_container["error"] = str(e)
 
-    # 第一重保险：防止 exec_command 卡住
     t = threading.Thread(target=run_cmd)
     t.start()
-    t.join(timeout=6)  # 给 run_cmd 最多 6 秒时间
+    t.join(timeout=6) 
 
     if t.is_alive():
-        print("健康检查失败: exec_command 卡死，强制断开 SSH")
+        print("failed")
         # ssh.close()
         ssh = None
         return False
     if "error" in result_container:
-        print(f"健康检查失败: {result_container['error']}")
+        print(f"failed:: {result_container['error']}")
         ssh = None
         return False
     if result_container.get("out") == "ok":
-        # print("健康检查成功")
         return True
     else:
         ssh = None
-        print(f"健康检查失败: 输出={result_container.get('out')}")
+        print(f"failed, {result_container.get('out')}")
         return False
 
 
@@ -100,7 +97,6 @@ def is_process_running(program_name):
     def run_cmd():
         try:
             stdin, stdout, stderr = ssh.exec_command(f"pgrep -x {program_name}")
-            # 防止 stdout.read() 卡住，轮询 exit_status_ready
             deadline = time.time() + 5
             output = None
             while time.time() < deadline:
@@ -109,7 +105,7 @@ def is_process_running(program_name):
                     break
                 time.sleep(0.1)
             else:
-                raise TimeoutError("stdout.read() 超时")
+                raise TimeoutError("stdout.read() timeout")
             result_container["out"] = output
         except Exception as e:
             result_container["error"] = str(e)
@@ -134,33 +130,29 @@ def is_process_running(program_name):
     #     except Exception as e:
     #         result_container["error"] = str(e)
 
-    # 第一重保险：防止 exec_command 卡死
     for i in range(10):
         t = threading.Thread(target=run_cmd)
         t.start()
         t.join(timeout=6)
 
         if t.is_alive():
-            print("glitch进程检查失败: exec_command 卡死 (可能目标机死机)")
+            print("glitch failed: exec_command")
             ssh.close()
             ssh = None
             return "dead"
 
         if "error" in result_container:
-            print(f"glitch进程检查失败: {result_container['error']}")
+            print(f"failed: {result_container['error']}")
             ssh.close()
             ssh = None
             return "dead"
 
         output = result_container.get("out", "")
         if output:  
-            # pgrep 找到 PID（进程在运行）
-            # print(f"glitch进程在运行, PID={output}")
             return "running"
         else:
-            # pgrep 没找到进程
             time.sleep(0.5)
-    print("--------------------glitch进程未运行--------------------------")
+    print("--------------------glitch no running--------------------------")
     Unexpected_death = True
     return "Unexpected_death"
 
@@ -176,7 +168,7 @@ def connect_DCpower():
             DC_session.read_termination = '\n'
         return True
     except Exception as e:
-        print(f"[connect_DCpower] 连接失败: {e}")
+        print(f"[connect_DCpower] failed: {e}")
         DC_session = None
         sys.exit(1)
 
@@ -194,11 +186,11 @@ def close_DCpower():
             DC_session.write(f"OUTP OFF,(@{DC_channel1})")
             return
         except Exception as e:
-            print(f"[close_DCpower] 出错: {e}, 尝试第 {i+1} 次重连")
+            print(f"[close_DCpower] error")
             DC_session = None
             if not connect_DCpower():
                 time.sleep(1)
-    print("[close_DCpower] 多次重试失败，放弃")
+    print("[close_DCpower]")
     sys.exit(1) 
 
 
@@ -212,17 +204,16 @@ def remote_ctr(duration):
             DC_session.write(f"OUTP OFF,(@{DC_channel4})")
             return
         except Exception as e:
-            print(f"[remote_ctr] 出错: {e}, 尝试第 {i+1} 次重连")
+            print(f"[remote_ctr] error")
             DC_session = None
             if not connect_DCpower():
                 time.sleep(1)
-    print("[remote_ctr] 多次重试失败，放弃")
+    print("[remote_ctr] failed too many")
     sys.exit(1) 
 
 
 def remote_rst():
     global restart
-    # print("主机死机，强制关机")
     close_DCpower()
     time.sleep(0.1)
     remote_ctr(6)
@@ -260,7 +251,7 @@ def mul():
                 if freq < 0.8:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -271,7 +262,7 @@ def mul():
                         # cfg_DCpower_ch1_volt(pre_volt)
                         fault_volt = freq_glitch.get(freq)
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/mul && sudo ./run.sh 5 {freq}GHz {pre_volt} {0.000100} {fault_volt} {0.000500} {0.000100}")
                         wait_log = True
                         time.sleep(CHECK_INTERVAL)
@@ -314,7 +305,7 @@ def sgx_mul():
                 if freq < 0.8:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -326,7 +317,7 @@ def sgx_mul():
                         pre_volt = freq_glitch.get(freq) - 0.020
                         fault_volt = freq_glitch.get(freq)
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-mul && sudo ./run.sh 10 {freq}GHz {pre_volt} 0.000100 {fault_volt} 0.000500 0.000100")
                         wait_log = True
                         restart = False
@@ -370,7 +361,7 @@ def sgx_rsa():
                 if freq < 0.8:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -385,7 +376,7 @@ def sgx_rsa():
                         fault_delay = 0.000050 + (3.8-freq)/step * 0.000005
                         delay = 0
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-crt-rsa && sudo ./run.sh 10000 {freq}GHz {DC_pre_volt} {pre_volt} 0.000040 {fault_volt} {fault_delay} {delay}")
                         wait_log = True
                         restart = False
@@ -431,7 +422,7 @@ def sgx_SHA512():
                 if freq < 0.8:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -447,7 +438,7 @@ def sgx_SHA512():
                         fault_delay = 0.000050 + (3.8-freq)/step * 0.000001
                         delay = 0
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-SHA512-IPP && sudo ./app 1000 {freq}GHz {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_delay} {delay}")
                         wait_log = True
                         restart = False
@@ -494,7 +485,7 @@ def sgx_HMAC():
                 if freq < 1.5:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -509,7 +500,7 @@ def sgx_HMAC():
                         fault_delay = 0.000050 + (3.8-freq)/step * 0.000001
                         delay = 0
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-hmac && sudo ./app 1000 {freq}GHz {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_delay} {delay}")
                         wait_log = True
                         restart = False
@@ -560,7 +551,7 @@ def sgx_sm4():
                 # if pre_width > 0.000050:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -574,7 +565,7 @@ def sgx_sm4():
                         fault_volt = freq_glitch.get(freq) + 0.010
                         delay = 0
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-sm4 && sudo ./app 1000 {freq}GHz {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_delay} {delay}")
                         wait_log = True
                         restart = False
@@ -625,7 +616,7 @@ def sgx_SIMD():
                 # if pre_width > 0.000050:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -639,7 +630,7 @@ def sgx_SIMD():
                         fault_volt = freq_glitch.get(freq) + 0.060
                         delay = 0
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-SIMD && sudo ./app 1000 {freq}GHz {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_delay} {delay}")
         
                         wait_log = True
@@ -690,7 +681,7 @@ def sgx_EdDSA():
                 # if fault_delay > 0.000100:
                     disconnect_DCpower()
                     ssh_disconnect()
-                    print("结束退出")
+                    print("exit")
                     break
                 prev_state = "OK"
             else:
@@ -701,7 +692,7 @@ def sgx_EdDSA():
                     if wait_log == False:
                         pre_volt = freq_glitch.get(freq) - 0.025
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/sgx-EdDSA && sudo ./app 5 {freq}GHz 0 {pre_volt} 0 0 0 0")
                         wait_log = True
                         restart = False
@@ -753,7 +744,7 @@ def memory_access_mc():
                     if index > 511:
                         disconnect_DCpower()
                         ssh_disconnect()
-                        print("结束退出")
+                        print("exit")
                         break
                 prev_state = "OK"
             else:
@@ -768,7 +759,7 @@ def memory_access_mc():
                         # fault_volt = 0.3520
                         fault_volt = 0.300
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz {index} index下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz {index} run at {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/fault-mc/memory-access && sudo ./memory_test 10 {freq} {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_width} {index}")
                         wait_log = True
                         restart = False
@@ -815,7 +806,7 @@ def sgx_memory_access_mc():
                 if count > 100:
                         disconnect_DCpower()
                         ssh_disconnect()
-                        print("结束退出")
+                        print("exit")
                         break
                 prev_state = "OK"
             else:
@@ -828,7 +819,7 @@ def sgx_memory_access_mc():
                         pre_volt = 0.1530
                         fault_volt = 0.20
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/fault-mc/sgx-memory-access && sudo ./app 10 {freq} {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_width} 0")
                         wait_log = True
                         restart = False
@@ -877,7 +868,7 @@ def memory_access_sa():
                     if index > 3:
                         disconnect_DCpower()
                         ssh_disconnect()
-                        print("结束退出")
+                        print("exit")
                         break
                 prev_state = "OK"
             else:
@@ -890,7 +881,7 @@ def memory_access_sa():
                         pre_volt = 0.35
                         fault_volt = 0.570
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz {index} index下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz {index} run at {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/fault-sa/memory-access && sudo ./memory_test 10 {freq} {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_width} {index}")
                         wait_log = True
                         restart = False
@@ -937,7 +928,7 @@ def sgx_memory_access_sa():
                 if count > 100:
                         disconnect_DCpower()
                         ssh_disconnect()
-                        print("结束退出")
+                        print("exit")
                         break
                 prev_state = "OK"
             else:
@@ -950,7 +941,7 @@ def sgx_memory_access_sa():
                         pre_volt = 0.35
                         fault_volt = 0.370
                         now = datetime.now()
-                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz下第 {count} 次启动进程")
+                        print(f"\n{now.strftime("%H:%M:%S")}, {freq} GHz run {count}th")
                         ssh.exec_command(f"cd /home/xxx/VoltFraud-sgx/poc/fault-sa/sgx-memory-access && sudo ./app 10 {freq} {DC_volt} {pre_volt} {pre_width} {fault_volt} {fault_width} 0")
                         wait_log = True
                         restart = False
