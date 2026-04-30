@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 		volt_fault += 0.003;
         snprintf(log_info, sizeof(log_info), "pre_volt %.4f, pre_width %.6f, fault_volt %.4f, fault_width %.6f, delay %.6f\n", volt_prep, width_prep, volt_fault, width_fault, delay);
         write_log(log_info);
-        configurae_for_mc(1, 1, volt_prep, width_prep, volt_fault, width_fault, delay);
+        configurae_for_io(1, 1, volt_prep, width_prep, volt_fault, width_fault, delay);
         
         // Target ecall
 		for (int ii =0; ii< iterations; ii++) {

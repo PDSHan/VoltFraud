@@ -95,7 +95,7 @@ int configurae_for_mc(int repeat, int ch, float prep_volt, float prep_width, flo
     return 0;
 }
 
-int configurae_for_sa(int repeat, int ch, float prep_volt, float prep_width, float fault_volt, float falut_width, float delay){
+int configurae_for_io(int repeat, int ch, float prep_volt, float prep_width, float fault_volt, float falut_width, float delay){
     char cmd[256];
     if(float2int(fault_volt) == 0){
         prep_volt = prep_volt * 0.6666;
@@ -112,36 +112,26 @@ int configurae_for_sa(int repeat, int ch, float prep_volt, float prep_width, flo
 }
 
 
-// VCORE = Vnom - VSPbias
-// VSPbias = 0.65 * DCpower
 int configure_glitch_with_delay(int repeat, int ch, float prep_volt, float prep_width, float fault_volt, float falut_width, float delay){
     float DCpower_v1, DCpower_v2;
     channel=ch;
     char cmd[256];
     // we need special method to trigger type1 configurations.
     if(float2int(fault_volt) == 0){
-        DCpower_v1 = prep_volt  / 0.65;
+        DCpower_v1 = prep_volt  / 0.91;
         snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-sgx/lib/DCpower_ctr.py cfg_type1 %.4f", DCpower_v1);
         printf("%s\n", cmd);
         system(cmd);
     }
     else{
-        DCpower_v1 = prep_volt / 0.65; //v1 and v2 must greater than 0.016.
-        DCpower_v2 = fault_volt / 0.65;
+        DCpower_v1 = prep_volt / 0.91; 
+        DCpower_v2 = fault_volt / 0.91;
         if(float2int(prep_volt) == 0)
             snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 0", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width);
         else
             snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 1", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width);
         printf("%s\n", cmd);
         system(cmd);
-        // ret = configure_DCpower_type2(DCpower_v1, d1, DCpower_v2, d2, delay);
-        // if(ret < 0){
-        //     func_error("Configure DC power type2 error!\n");
-        // }
-        // ret = configure_DCpower_trigger(repeat);
-        // if(ret < 0){
-        //     func_error("Configure DC power trigger error!\n");
-        // }
     }
 
     return 0;
