@@ -1,0 +1,18 @@
+Create Enclave...
+
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2850, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2900, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.2950, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3000, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3050, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3100, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3150, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3200, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3250, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3300, fault_width 0.000050, delay 1.000000
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3350, fault_width 0.000050, delay 1.000000
+Fault Injection Detected!
+63 39 3D 22 83 77 62 AC 58 AA CF 96 2F E6 45 0A 6A C0 E7 A5 AE 32 5D 01 42 CB 35 79 E5 56 68 0F 6A 7B 6A A2 81 57 D7 B0 E1 D5 DE EB 97 C0 2F 5D AD 46 EE 21 F2 5A AE BE 13 85 AD 7E 6C AD CA 38 
+Fault Injection Detected!
+69 A4 77 7A 74 65 6B A7 86 BA DB F6 7F 00 26 F6 FB 51 10 FB 92 91 7A F2 25 F5 8D A1 9B 0E EE AD 54 2D 5E 0B 7D 54 BA 9E 46 97 C5 40 43 53 E1 79 D7 7C 9A CB D3 7E E4 76 F4 CC DC 3A DF 26 42 16 
+pre_volt 0.1200, pre_width 0.000010, fault_volt 0.3400, fault_width 0.000050, delay 1.000000

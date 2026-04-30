@@ -1,0 +1,19 @@
+
+enclave {
+	trusted {
+		include "tlibc/string.h"
+		include "tlibc/stdio.h"
+		public sgx_status_t memory_access_ecall();
+		public void fault_injection_ecall([in, string] const char* out_path);
+		public void generate_file_ecall([in, string] const char* out_path);
+		public int load_verify_msg_ecall([in, string] char *file_path);
+	};
+	
+	untrusted {
+	 	void ocall_print_string([in, string] const char *str);
+        void ocall_record_string([in, string] const char *str);
+        int ocall_get_filesize([in, string] const char *fname, [out] long int *fsize); 
+		int ocall_load_file([in, string] const char* fname, long int fsize, [out, size=fsize] unsigned char* data);  
+		int ocall_write_file([in, string] const char* fname, long int fsize, [in, size=fsize] unsigned char* data);  
+	};
+};

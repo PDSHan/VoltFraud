@@ -12,11 +12,11 @@ while True:
     # 拉高 DTR（True = 逻辑 1）
     ser.setDTR(True)
     print("DTR = HIGH")
-    time.sleep(1)
+    time.sleep(20)
 
     # 拉低 DTR（False = 逻辑 0）
     ser.setDTR(False)
     print("DTR = LOW")
-    time.sleep(1)
+    time.sleep(20)
 
 ser.close()

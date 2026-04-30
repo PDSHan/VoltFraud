@@ -10,8 +10,6 @@
 #include "DCbias.h"
 
 
-
-
 int channel;
 
 void log_sensors_output(int log_fd) {
@@ -70,19 +68,19 @@ void delay_us(double us, double tsc_ghz) {
 
 
 
-//voltage format is X.XXXXX(V), time format is X.XXXX(s).
+//voltage format is X.lblXX(V), time format is X.lblX(s).
 int float2int(float v){
     return (int)(v * 10000 + 0.5f);
 }
 
 
-int configurae_for_vddq(int repeat, int ch, float prep_volt, float prep_width, float fault_volt, float falut_width, float delay){
+int configure_for_vddq(int repeat, int ch, float prep_volt, float prep_width, float fault_volt, float falut_width, float delay){
     char cmd[256];
     if(float2int(fault_volt) == 0){
-        snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type1 %.4f %d", prep_volt, ch);
+        snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type1 %.4f %d", prep_volt, ch);
     }
     else{
-        snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 1 %d", repeat, prep_volt, prep_width, fault_volt, falut_width, ch);
+        snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 1 %d", repeat, prep_volt, prep_width, fault_volt, falut_width, ch);
     }
     printf("%s\n", cmd);
     system(cmd);
@@ -96,31 +94,21 @@ int configure_glitch_with_delay(int repeat, int ch, float prep_volt, float prep_
     char cmd[256];
     // we need special method to trigger type1 configurations.
     if(float2int(fault_volt) == 0){
-        // DCpower_v1 = prep_volt  / 0.65;
         DCpower_v1 = prep_volt;
-        snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type1 %.4f", DCpower_v1);
+        snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type1 %.4f %d", DCpower_v1, ch);
         printf("%s\n", cmd);
         system(cmd);
     }
     else{
-        // DCpower_v1 = prep_volt / 0.65; //v1 and v2 must greater than 0.016.
-        // DCpower_v2 = fault_volt / 0.65;
+        // the offset of sense voltage = the output valtage of external power supply, it means k = 1.
         DCpower_v1 = prep_volt;
         DCpower_v2 = fault_volt;   
         if(float2int(prep_volt) == 0)
-            snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 0", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width);
+            snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 0 %d", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width, ch);
         else
-            snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 1", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width);
+            snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cfg_type2 %d %.4f %.6f %.4f %.6f 1 %d", repeat, DCpower_v1, prep_width, DCpower_v2, falut_width, ch);
         printf("%s\n", cmd);
         system(cmd);
-        // ret = configure_DCpower_type2(DCpower_v1, d1, DCpower_v2, d2, delay);
-        // if(ret < 0){
-        //     func_error("Configure DC power type2 error!\n");
-        // }
-        // ret = configure_DCpower_trigger(repeat);
-        // if(ret < 0){
-        //     func_error("Configure DC power trigger error!\n");
-        // }
     }
 
     return 0;
@@ -128,7 +116,7 @@ int configure_glitch_with_delay(int repeat, int ch, float prep_volt, float prep_
 
 int start_DCpower_type1(int channel){
     char cmd[256];
-    snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cmd ON %d", channel);
+    snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cmd ON %d", channel);
     system(cmd);
 
     return 0;
@@ -136,7 +124,7 @@ int start_DCpower_type1(int channel){
 
 int end_DCpower_type1(int channel){   
     char cmd[256];
-    snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cmd OFF %d", channel);
+    snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py cmd OFF %d", channel);
     system(cmd);
 
     return 0;
@@ -144,7 +132,7 @@ int end_DCpower_type1(int channel){
 
 int close_BNC_Arb(int channel){
     char cmd[256];
-    snprintf(cmd, sizeof(cmd), "python3 /home/xxx/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py close_BNC_Arb %d", channel);
+    snprintf(cmd, sizeof(cmd), "python3 /home/lbl/VoltFraud-Scalable-sgx/lib/DCpower_ctr.py close_BNC_Arb %d", channel);
     system(cmd);
 
     return 0;
@@ -245,66 +233,66 @@ int kmsg_poll_and_log(int *old_byte_num, int log_fd)
 }
 
 
-int setup_dtr(){
-    int fd_trigger;
-	//// Configure on-board serial (to be used as trigger)
-	fd_trigger = open("/dev/ttyS0", O_RDWR | O_NOCTTY );
-	if( fd_trigger==-1 ) {
-		printf("Trigger serial: could not open port\n");
-		return -1;
-	}
-	printf("Trigger serial: opened port %s\n","/dev/ttyS0");
+// int setup_dtr(){
+//     int fd_trigger;
+// 	//// Configure on-board serial (to be used as trigger)
+// 	fd_trigger = open("/dev/ttyS0", O_RDWR | O_NOCTTY );
+// 	if( fd_trigger==-1 ) {
+// 		printf("Trigger serial: could not open port\n");
+// 		return -1;
+// 	}
+// 	printf("Trigger serial: opened port %s\n","/dev/ttyS0");
 
 
-	// Create new termios struc, we call it 'tty' for convention
-	struct termios tty;
-	memset(&tty, 0, sizeof tty);
+// 	// Create new termios struc, we call it 'tty' for convention
+// 	struct termios tty;
+// 	memset(&tty, 0, sizeof tty);
 
-	// Read in existing settings, and handle any error
-	if(tcgetattr(fd_trigger, &tty) != 0) {
-		printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
-	}
+// 	// Read in existing settings, and handle any error
+// 	if(tcgetattr(fd_trigger, &tty) != 0) {
+// 		printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
+// 	}
 
-	tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
-	tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
-	tty.c_cflag |= CS8; // 8 bits per byte (most common)
-	tty.c_cflag &= ~CRTSCTS;
-	tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
+// 	tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
+// 	tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
+// 	tty.c_cflag |= CS8; // 8 bits per byte (most common)
+// 	tty.c_cflag &= ~CRTSCTS;
+// 	tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
 
-	tty.c_lflag &= ~ICANON;
-	tty.c_lflag &= ~ECHO; // Disable echo
-	tty.c_lflag &= ~ECHOE; // Disable erasure
-	tty.c_lflag &= ~ECHONL; // Disable new-line echo
-	tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
-	tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
-	tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
+// 	tty.c_lflag &= ~ICANON;
+// 	tty.c_lflag &= ~ECHO; // Disable echo
+// 	tty.c_lflag &= ~ECHOE; // Disable erasure
+// 	tty.c_lflag &= ~ECHONL; // Disable new-line echo
+// 	tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
+// 	tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
+// 	tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
 
-	tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
-	tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
-	//tty.c_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT ON LINUX)
-	//tty.c_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT ON LINUX)
+// 	tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
+// 	tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
+// 	//tty.c_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT ON LINUX)
+// 	//tty.c_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT ON LINUX)
 
-	tty.c_cc[VTIME] = 0;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
-	tty.c_cc[VMIN] = 0;
+// 	tty.c_cc[VTIME] = 0;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
+// 	tty.c_cc[VMIN] = 0;
 
-	// Set in/out baud rate to be 9600
-	cfsetispeed(&tty, B38400);
-	cfsetospeed(&tty, B38400);
+// 	// Set in/out baud rate to be 9600
+// 	cfsetispeed(&tty, B38400);
+// 	cfsetospeed(&tty, B38400);
 
 
-	struct serial_struct kernel_serial_settings;
-	int r = ioctl(fd_trigger, TIOCGSERIAL, &kernel_serial_settings);
-	if (r >= 0) {
-		kernel_serial_settings.flags |= ASYNC_LOW_LATENCY;
-		r = ioctl(fd_trigger, TIOCSSERIAL, &kernel_serial_settings);
-		if (r >= 0) printf("set linux low latency mode\n");
-	}
+// 	struct serial_struct kernel_serial_settings;
+// 	int r = ioctl(fd_trigger, TIOCGSERIAL, &kernel_serial_settings);
+// 	if (r >= 0) {
+// 		kernel_serial_settings.flags |= ASYNC_LOW_LATENCY;
+// 		r = ioctl(fd_trigger, TIOCSSERIAL, &kernel_serial_settings);
+// 		if (r >= 0) printf("set linux low latency mode\n");
+// 	}
 
-	tcsetattr(fd_trigger, TCSANOW, &tty);
-	if( tcsetattr(fd_trigger, TCSAFLUSH, &tty) < 0) {
-		perror("init_serialport: Couldn't set term attributes");
-		return -1;
-	}
+// 	tcsetattr(fd_trigger, TCSANOW, &tty);
+// 	if( tcsetattr(fd_trigger, TCSAFLUSH, &tty) < 0) {
+// 		perror("init_serialport: Couldn't set term attributes");
+// 		return -1;
+// 	}
 
-    return 0;
-}
+//     return 0;
+// }

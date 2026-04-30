@@ -30,7 +30,7 @@ def cfg_glitch_type1(fault_volt, channel):
     DC_session.clear()
     DC_session.write(f"VOLT {fault_volt},(@{channel})")
 
-def cfg_glitch_type2(pre_volt, pre_width, fault_volt, fault_width, tag, channel):
+def cfg_glitch_type2(repeat, pre_volt, pre_width, fault_volt, fault_width, tag, channel):
     # global DC_session, DC_channel
     global DC_session
     DC_session.clear()
@@ -40,8 +40,24 @@ def cfg_glitch_type2(pre_volt, pre_width, fault_volt, fault_width, tag, channel)
         DC_session.write(f"ARB:VOLT:UDEF:LEV {round(fault_volt, 4)},(@{channel})")
         DC_session.write(f"ARB:VOLT:UDEF:DWEL {round(fault_width, 6)},(@{channel})")
     else:
-        DC_session.write(f"ARB:VOLT:UDEF:LEV {round(pre_volt, 6)},{round(fault_volt, 4)},(@{channel})")
-        DC_session.write(f"ARB:VOLT:UDEF:DWEL {round(pre_width, 6)},{round(fault_width, 6)},(@{channel})")
+        if repeat == 1:
+            DC_session.write(f"ARB:VOLT:UDEF:LEV {round(pre_volt, 4)},{round(fault_volt, 4)},(@{channel})")
+            DC_session.write(f"ARB:VOLT:UDEF:DWEL {round(pre_width, 6)},{round(fault_width, 6)},(@{channel})")
+        else:
+            levels = []
+            dwels = []
+            for i in range(repeat):
+                levels.extend([round(pre_volt,4), round(fault_volt,4)])
+                if i == 0:
+                    dwels.extend([round(pre_width,6), round(fault_width,6)])
+                else:
+                    dwels.extend([round(fault_width*3,6), round(fault_width,6)])
+
+            levels_str = ",".join(map(str, levels))
+            dwels_str = ",".join(map(str, dwels))
+
+            DC_session.write(f"ARB:VOLT:UDEF:LEV {levels_str},(@{channel})")
+            DC_session.write(f"ARB:VOLT:UDEF:DWEL {dwels_str},(@{channel})")
 
 def set_BNC_Trigger(repeat, channel):
     # global DC_session, DC_channel
@@ -68,6 +84,7 @@ def set_BNC_Trigger(repeat, channel):
         else:
             print(f"device is not ready to receive trigger signal. return is {val}.")
             time.sleep(0.1) 
+            
 def ctr_DC_channel(cmd, channel):
     # global DC_session,DC_channel
     global DC_session
@@ -121,11 +138,12 @@ if __name__ == "__main__":
         fault_width = float(sys.argv[6])
         tag = int(sys.argv[7])
         channel = (sys.argv[8])
-        repeat = True if int(sys.argv[2])>0 else False
+        # repeat = True if int(sys.argv[2])>0 else False
+        repeat = int(sys.argv[2])
         connect()
-        cfg_glitch_type2(pre_volt, pre_width, fault_volt, fault_width, tag, channel)
+        cfg_glitch_type2(repeat, pre_volt, pre_width, fault_volt, fault_width, tag, channel)
         time.sleep(0.1)
-        set_BNC_Trigger(repeat, channel)
+        set_BNC_Trigger(True, channel)
         disconnect()
     elif arg1 == "cfg_type3":
         fault_volt = float(sys.argv[2])

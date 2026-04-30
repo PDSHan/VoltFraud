@@ -150,7 +150,7 @@ void memory_read(fault_params *params){
         volt_fault = volt_fault + 0.005;
         snprintf(log_info, sizeof(log_info), "pre_volt %.4f, pre_width %.6f, fault_volt %.4f, fault_width %.6f, index %d\n", volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
         write(log_fd, log_info, strlen(log_info));
-        configurae_for_vddq(1, 1, volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
+        configure_for_vddq(1, 1, volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
 
         for (int ii=0; ii<params->retries; ii++){
             // uint8_t val = (uint8_t)(0xAC ^ (ii & 0xff));
@@ -291,7 +291,7 @@ void memory_write(fault_params *params){
         volt_fault = volt_fault + 0.005;
         snprintf(log_info, sizeof(log_info), "pre_volt %.4f, pre_width %.6f, fault_volt %.4f, fault_width %.6f, index %d\n", params->volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
         write(log_fd, log_info, strlen(log_info));
-        configurae_for_vddq(1, 1, params->volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
+        configure_for_vddq(1, 1, params->volt_prep, params->width_prep, volt_fault, params->width_fault, params->index);
 
         for (int ii=0; ii<params->retries; ii++){
             // uint8_t val = (uint8_t)(0xAC ^ (ii & 0xff));
@@ -406,7 +406,7 @@ int main(int argc, char **argv) {
     print_affinity();
 
     close_BNC_Arb(1);
-    configurae_for_vddq(1,1,DC_pre_volt,0,0,0,0);
+    configure_for_vddq(1,1,DC_pre_volt,0,0,0,0);
     start_DCpower_type1(1);
 
     log_fd = open("./log.txt", O_WRONLY | O_CREAT | O_APPEND | O_SYNC, 0666);

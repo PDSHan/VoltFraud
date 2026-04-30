@@ -13,7 +13,7 @@
 #include "DCbias.h"
 #include <linux/ioctl.h>
 #include <linux/serial.h>
-
+#include <errno.h>
 
 #define BUFLEN 2048
 #define SGX_AESGCM_MAC_SIZE 16
@@ -42,9 +42,104 @@ void ocall_print_string(const char *str)
 	/* Proxy/Bridge will check the length and null-terminate 
 	 * the input string to prevent buffer overflow. 
 	 */
-	write_log(str);
-    
+	fprintf(stderr, "%s", str);
 }
+void ocall_record_string(const char *str)
+{
+    write_log(str);
+}
+
+FILE *fp_model;
+int ocall_get_filesize(const char *modelname, long *f_size){
+    if (fp_model == NULL) {
+        fp_model = fopen(modelname, "rb");
+        if (fp_model == NULL) {
+            printf("fopen(%s) failed: %s\n", modelname, strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+	fseek(fp_model, 0, SEEK_END);
+	long fsize = ftell(fp_model);
+	fseek(fp_model, 0, SEEK_SET);
+
+	*f_size = fsize;
+	// close(fp);
+    return 0;
+}
+
+int ocall_load_file(const char *modelname, long f_size, unsigned char *data){
+    // printf("in ocall, fsize: %ld \n", f_size);
+    // FILE *fp_model = fopen(modelname, "rb");
+    if (fp_model == NULL) {
+        fp_model = fopen(modelname, "rb");
+        if(fp_model == NULL){
+            printf("fopen(%s) failed: %s\n", modelname, strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    size_t total_len = fread(data, 1, f_size, fp_model);
+    // fclose(fp);
+    // printf("read %ld bytes\n", total_len);
+    fseek(fp_model, 0, SEEK_SET);
+    return total_len;
+
+}
+
+int ocall_write_file(const char *filename, long f_size, unsigned char *data){
+    // printf("in ocall, fsize: %ld \n", f_size);
+    FILE *fp = fopen(filename, "wb");
+    if (fp == NULL) {
+        printf("fopen(%s) failed: %s\n", filename, strerror(errno));
+        exit(EXIT_FAILURE);
+    }
+
+    size_t total_len = fwrite(data, 1, f_size, fp);
+    fclose(fp);
+    return total_len;
+}
+
+//evict enclave cache
+#define CACHELINE 64
+#define LLC_SIZE_MB 42
+#define EVICT_SIZE (LLC_SIZE_MB * 2 * 1024 * 1024)  // 84MB
+
+static uint8_t *evict_buf = NULL;
+static size_t evict_size = EVICT_SIZE;
+
+/**
+ * 初始化 eviction buffer（只需调用一次）
+ */
+void init_eviction_buffer() {
+    if (evict_buf != NULL) return;
+
+    if (posix_memalign((void**)&evict_buf, CACHELINE, evict_size) != 0) {
+        perror("posix_memalign");
+        exit(1);
+    }
+
+    for (size_t i = 0; i < evict_size; i += CACHELINE) {
+        evict_buf[i] = (uint8_t)i;
+    }
+
+    // printf("[+] Eviction buffer initialized: %zu MB\n", evict_size / (1024 * 1024));
+}
+
+void evict_llc(int rounds) {
+    if (evict_buf == NULL) {
+        fprintf(stderr, "evict_buf not initialized\n");
+        exit(1);
+    }
+
+    for (int r = 0; r < rounds; r++) {
+        for (size_t i = 0; i < evict_size; i += CACHELINE) {
+            volatile uint8_t x = evict_buf[i];
+            (void)x;
+        }
+    }
+}
+
 
 
 int main(int argc, char **argv)
@@ -105,12 +200,8 @@ int main(int argc, char **argv)
     start_DCpower_type1(1);
     start_DCpower_type1(2);
 	struct timespec start, end1, end2, end3, end4;
-
-    int init_byte_num=0;
-    int kmsg_status = kmsg_init(&init_byte_num);
-    if(kmsg_status != 0)
-        return -1;
-
+    init_eviction_buffer();
+    generate_file_ecall(eid, "./input.bin");
 
 	for(int i=0; i<1000; i++) {
 		volt_fault += 0.005;
@@ -120,6 +211,9 @@ int main(int argc, char **argv)
         configure_for_vddq(1, 2, volt_prep, width_prep, volt_fault, width_fault, delay);
         // Target ecall
 		for (int ii =0; ii< iterations; ii++) {
+            load_verify_msg_ecall(eid, &res_var, "./input.bin");
+            evict_llc(2);
+
             fd_trigger = open("/dev/ttyS0", O_RDWR | O_NOCTTY );
             if( fd_trigger == -1 ) {
                 snprintf(log_info, sizeof(log_info), "[ERROR]: Trigger serial: could not open port\n");
@@ -129,22 +223,14 @@ int main(int argc, char **argv)
             ioctl(fd_trigger, TIOCMBIC, &DTR);
 
             // clock_gettime(CLOCK_MONOTONIC, &end2);
-			sgx_ret = memory_access_ecall(eid, &res_var);
+			fault_injection_ecall(eid, "./fault_output.bin");
             // clock_gettime(CLOCK_MONOTONIC, &end3);
-            if (SGX_SUCCESS != sgx_ret){
-                snprintf(log_info, sizeof(log_info), "[ERROR]: memory_access_ecall error 0x%x\n", sgx_ret);
-                write_log(log_info);
-                return -1;
-            }
 
             msleep(20);
             close(fd_trigger);
-            kmsg_status = kmsg_poll_and_log(&init_byte_num, log_fd);
-            if(kmsg_status != 0)
-                return -1;
 
             // double duration2 = (end3.tv_sec - end2.tv_sec) + (end3.tv_nsec - end2.tv_nsec) / 1e9;
-            // printf("memory_access_ecall time is %.9f second.\n", duration2);
+            // printf("fault_injection_ecall time is %.9f second.\n", duration2);
 		}
         msleep(1000);
         close_BNC_Arb(1);
@@ -159,4 +245,6 @@ int main(int argc, char **argv)
 
 	return 0;
 }
+
+
 

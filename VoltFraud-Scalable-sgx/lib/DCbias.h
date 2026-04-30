@@ -15,7 +15,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 extern int channel;
 
@@ -35,13 +37,13 @@ void delay_us(double us, double tsc_ghz);
 
 int configure_glitch_with_delay(int repeat, int ch, float v1, float d1, float v2, float d2, float delay);
 
-int start_DCpower_type1();
+int start_DCpower_type1(int channel);
 
 int end_DCpower_type1();
 
 int destroy_DCpower();
 
-int close_BNC_Arb();
+int close_BNC_Arb(int channel);
 
 void print_affinity();
 
@@ -58,5 +60,11 @@ int kmsg_init(int *init_byte_num);
 int kmsg_poll_and_log(int *old_byte_num, int log_fd);
 
 int setup_dtr();
+
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
